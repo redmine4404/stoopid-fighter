@@ -10,4 +10,8 @@ class CubeRouge {
   void affiche() {
     image(CRouge, x, y);
   }
+
+  void draw() {
+    affiche();
+  }
 }
