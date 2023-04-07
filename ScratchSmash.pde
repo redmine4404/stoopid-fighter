@@ -1,18 +1,22 @@
-PImage CRouge, CBleu, Terrain;
+import processing.core.PApplet;
+import processing.core.PImage;
 
+public class ScratchSmash extends PApplet {
+    public static PImage CRouge, CBleu, Terrain;
+    public static ScratchSmash instance;
 void setup() {
   fullScreen();
   //size(800, 600);
-  CB = new CubeBleu();
-  CR = new CubeRouge();
-  Terrain = loadImage("Terrain.png");
-  Terrain.resize(width, height);
-  background(Terrain);
-}
 
-void draw() {
-  background(Terrain);
-  CB.draw();
-  CR.draw();
-  println(CB.toucheTerrain);
+        CubeBleu.CB = new CubeBleu();
+        CubeRouge.CR = new CubeRouge();
+        Terrain = loadImage("Terrain.png");
+        Terrain.resize(width, height);
+        background(Terrain);
+    }
+    public void draw() {
+        background(Terrain);
+        CubeBleu.CB.draw();
+        CubeRouge.CR.draw();
+    }
 }

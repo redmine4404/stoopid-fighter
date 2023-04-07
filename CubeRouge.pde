@@ -1,18 +1,19 @@
-CubeRouge CR;
+public class CubeRouge {
+    public static CubeRouge CR;
+    int x, y;
 
-class CubeRouge {
-  int x, y;
-  CubeRouge() {
-    x = 200;
-    y = 200;
-    CRouge = loadImage("CubeRouge.png");
+    CubeRouge() {
+      ScratchSmash.CRouge = ScratchSmash.instance.loadImage("CubeRouge.png");
+      y = 200;
+      x = 200;
     CRouge.resize(128, 128);
-  }
-  void affiche() {
-    image(CRouge, x, y);
-  }
+    }
 
-  void draw() {
-    affiche();
+    void affiche() {
+        ScratchSmash.instance.image(ScratchSmash.instance.CRouge, x, y);
+    }
+
+    void draw() {
+      affiche();
+    }
   }
-}

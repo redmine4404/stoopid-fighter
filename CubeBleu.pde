@@ -1,23 +1,22 @@
-CubeBleu CB;
-
-class CubeBleu {
+public class CubeBleu {
+  public static CubeBleu CB;
   int x, y;
   boolean toucheTerrain;
   CubeBleu() {
     x = 600;
     y = 600;
-    CBleu = loadImage("CubeBleu.png");
+    ScratchSmash.CBleu = ScratchSmash.instance.loadImage("CubeBleu.png");
     CBleu.resize(128, 128);
   }
   void affiche() {
-    //coords();
+    ScratchSmash.instance.image(ScratchSmash.CBleu, x, y);
     colorTouch();
-    image(CBleu, x, y);
     //if (colorTouch() == true) //nshgsi;
+    //coords();
   }
   void mooves() {
-    if (right == true) x += 5;
-    if (left == true) x -= 5;
+    if (keys.left == true) x-= 5;
+    if (keys.right == true) x += 5;
   }
   void colorTouch() {
     toucheTerrain = false;
