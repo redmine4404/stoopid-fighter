@@ -10,4 +10,12 @@ class CubeBleu {
   void affiche() {
     image(CBleu, x, y);
   }
+  void mooves() {
+    if (right == true) x += 5;
+    if (left == true) x-= 5;
+  }
+  void draw() {
+    mooves();
+    affiche();
+  }
 }

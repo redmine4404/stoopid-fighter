@@ -10,6 +10,7 @@ void setup() {
 }
 
 void draw() {
-  CR.affiche();
-  CB.affiche();
+  background(Terrain);
+  CB.draw();
+  CR.draw();
 }
