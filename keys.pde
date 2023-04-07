@@ -1,4 +1,4 @@
-boolean right, left;
+boolean right, left, up;
 
 void keyPressed() {
   keysIn();
@@ -16,6 +16,9 @@ void keysIn() {
   if (key == 'q') {
     left = true;
   }
+  if (key == ' ') {
+    up = true;
+  }
 }
 
 void keysOut() {
@@ -24,5 +27,8 @@ void keysOut() {
   }
   if (key == 'q') {
     left = false;
+  }
+  if (key == ' ') {
+    up = false;
   }
 }
