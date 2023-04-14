@@ -1,26 +1,23 @@
+import processing.core.PApplet;
+
 public class keys {
 
     public static boolean right, left;
 
-    void keyPressed() {
-        keysIn();
-    }
-
-    void keyReleased() {
-        keysOut();
-    }
 
 
-    void keysIn() {
+
+    static void keysIn() {
         if (ScratchSmash.instance.key == 'd') {
             right = true;
+            System.out.println("machin");
         }
         if (ScratchSmash.instance.key == 'q') {
             left = true;
         }
     }
 
-    void keysOut() {
+    static void keysOut() {
         if (ScratchSmash.instance.key == 'd') {
             right = false;
         }

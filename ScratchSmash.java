@@ -23,4 +23,15 @@ public void setup() {
         CubeBleu.CB.draw();
         CubeRouge.CR.draw();
     }
+
+    @Override
+    public void keyPressed() {
+        keys.keysIn();
+        System.out.println("truc");
+    }
+    @Override
+    public void keyReleased() {
+        keys.keysOut();
+    }
+
 }
