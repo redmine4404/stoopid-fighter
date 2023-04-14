@@ -1,5 +1,6 @@
-    public static boolean right, left;
 public class keys {
+
+    public static boolean right, left;
 
     void keyPressed() {
         keysIn();
@@ -17,10 +18,7 @@ public class keys {
         if (ScratchSmash.instance.key == 'q') {
             left = true;
         }
-  if (key == ' ') {
-    up = true;
-  }
-}
+    }
 
     void keysOut() {
         if (ScratchSmash.instance.key == 'd') {
@@ -29,7 +27,6 @@ public class keys {
         if (ScratchSmash.instance.key == 'q') {
             left = false;
         }
-  if (key == ' ') {
-    up = false;
-  }
+
+    }
 }

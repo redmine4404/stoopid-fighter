@@ -6,7 +6,7 @@ public class CubeBleu {
     x = 600;
     y = 600;
     ScratchSmash.CBleu = ScratchSmash.instance.loadImage("CubeBleu.png");
-    CBleu.resize(128, 128);
+    ScratchSmash.CBleu.resize(128, 128);
   }
   void affiche() {
     ScratchSmash.instance.image(ScratchSmash.CBleu, x, y);
@@ -22,7 +22,7 @@ public class CubeBleu {
     toucheTerrain = false;
     for (int l = 0; l < 128; l++) {
       for (int h = 0; h < 128; h++) {
-        if (get(x + l, y + h) == -8026747) {
+        if (ScratchSmash.instance.get(x + l, y + h) == -8026747) {
           toucheTerrain = true;
         }
       }

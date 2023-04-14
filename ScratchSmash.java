@@ -4,16 +4,20 @@ import processing.core.PImage;
 public class ScratchSmash extends PApplet {
     public static PImage CRouge, CBleu, Terrain;
     public static ScratchSmash instance;
-void setup() {
-  fullScreen();
+public void setup() {
   //size(800, 600);
-
+        instance = this;
         CubeBleu.CB = new CubeBleu();
         CubeRouge.CR = new CubeRouge();
         Terrain = loadImage("Terrain.png");
         Terrain.resize(width, height);
         background(Terrain);
     }
+
+    public void settings(){
+        fullScreen();
+    }
+
     public void draw() {
         background(Terrain);
         CubeBleu.CB.draw();
