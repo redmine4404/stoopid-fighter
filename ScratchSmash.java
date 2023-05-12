@@ -2,9 +2,14 @@ import processing.core.PApplet;
 import processing.core.PImage;
 
 import java.util.ArrayList;
-import java.util.List;
+
 
 public class ScratchSmash extends PApplet {
+
+    public static void main(String[] args) {
+        PApplet.main(new String[]{"ScratchSmash"});
+    }
+
     public static PImage CBleu, Terrain;
     public static ScratchSmash instance;
     public ArrayList<FighterInstance> fighterInstances = new ArrayList<FighterInstance>();
