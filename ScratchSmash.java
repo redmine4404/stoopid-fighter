@@ -10,7 +10,7 @@ public class ScratchSmash extends PApplet {
     public ArrayList<FighterInstance> fighterInstances = new ArrayList<FighterInstance>();
 
    public static void main(String[] args) {
-       PApplet.main(new String[]{"unfolding.Unfolding"});
+       PApplet.main(new String[]{"ScratchSmash"});
   }
     public void setup() {
         Animation CubeRougeAnimation = new Animation();
