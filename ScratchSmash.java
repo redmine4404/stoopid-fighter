@@ -13,8 +13,10 @@ public class ScratchSmash extends PApplet {
     public static ScratchSmash instance;
     public ArrayList<FighterInstance> fighterInstances = new ArrayList<FighterInstance>();
 
+   public static void main(String[] args) {
+       
+  }
     public void setup() {
-        // size(800, 600);
         Animation CubeRougeAnimation = new Animation();
         ArrayList<PImage> list = new ArrayList<PImage>();
         list.add(0, loadImage("CubeRouge.png"));
