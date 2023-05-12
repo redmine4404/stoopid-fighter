@@ -5,16 +5,12 @@ import java.util.ArrayList;
 
 public class ScratchSmash extends PApplet {
 
-    public static void main(String[] args) {
-        PApplet.main(new String[] { "ScratchSmash" });
-    }
-
     public static PImage CBleu, Terrain;
     public static ScratchSmash instance;
     public ArrayList<FighterInstance> fighterInstances = new ArrayList<FighterInstance>();
 
    public static void main(String[] args) {
-       
+       PApplet.main(new String[]{"unfolding.Unfolding"});
   }
     public void setup() {
         Animation CubeRougeAnimation = new Animation();
