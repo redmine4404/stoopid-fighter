@@ -3,19 +3,18 @@ import processing.core.PImage;
 
 import java.util.ArrayList;
 
-
 public class ScratchSmash extends PApplet {
 
     public static void main(String[] args) {
-        PApplet.main(new String[]{"ScratchSmash"});
+        PApplet.main(new String[] { "ScratchSmash" });
     }
 
     public static PImage CBleu, Terrain;
     public static ScratchSmash instance;
     public ArrayList<FighterInstance> fighterInstances = new ArrayList<FighterInstance>();
 
-public void setup() {
-  //size(800, 600);
+    public void setup() {
+        // size(800, 600);
         Animation CubeRougeAnimation = new Animation();
         ArrayList<PImage> list = new ArrayList<PImage>();
         list.add(0, loadImage("CubeRouge.png"));
@@ -29,7 +28,7 @@ public void setup() {
         background(Terrain);
     }
 
-    public void settings(){
+    public void settings() {
         fullScreen();
     }
 
@@ -44,6 +43,7 @@ public void setup() {
     public void keyPressed() {
         keys.keysIn();
     }
+
     @Override
     public void keyReleased() {
         keys.keysOut();

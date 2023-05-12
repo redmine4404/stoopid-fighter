@@ -1,11 +1,7 @@
 
-
 public class keys {
 
     public static boolean right, left;
-
-
-
 
     static void keysIn() {
         if (ScratchSmash.instance.key == 'd') {
