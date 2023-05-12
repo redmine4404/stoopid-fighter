@@ -10,7 +10,6 @@ public class keys {
     static void keysIn() {
         if (ScratchSmash.instance.key == 'd') {
             right = true;
-            System.out.println("machin");
         }
         if (ScratchSmash.instance.key == 'q') {
             left = true;
