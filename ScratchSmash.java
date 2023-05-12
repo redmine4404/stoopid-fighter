@@ -5,18 +5,20 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ScratchSmash extends PApplet {
-    public static PImage CRouge, CBleu, Terrain;
+    public static PImage CBleu, Terrain;
     public static ScratchSmash instance;
     public ArrayList<FighterInstance> fighterInstances = new ArrayList<FighterInstance>();
 
 public void setup() {
   //size(800, 600);
         Animation CubeRougeAnimation = new Animation();
-        CubeRougeAnimation.addAnimation("idle", new ArrayList<PImage>());
+        ArrayList<PImage> list = new ArrayList<PImage>();
+        list.add(0, loadImage("CubeRouge.png"));
+        CubeRougeAnimation.addAnimation("idle", list);
 
         instance = this;
         CubeBleu.CB = new CubeBleu();
-        fighterInstances.add(new CubeRouge());
+        fighterInstances.add(new CubeRouge(CubeRougeAnimation));
         Terrain = loadImage("Terrain.png");
         Terrain.resize(width, height);
         background(Terrain);

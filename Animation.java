@@ -7,8 +7,9 @@ public class Animation {
 
     HashMap<String,  ArrayList<PImage>> animationlist = new HashMap<String, ArrayList<PImage>>();
 
-    public void addAnimation(String name, ArrayList<PImage> Animation) {
+    public Animation addAnimation(String name, ArrayList<PImage> Animation) {
   animationlist.put(name, Animation);
+  return this;
 }
 
     public Animation(){
