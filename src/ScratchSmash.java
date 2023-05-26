@@ -40,13 +40,8 @@ public class ScratchSmash extends PApplet {
     @Override
     public void keyPressed() {
         keys.keysIn();
-<<<<<<< HEAD
         System.out.println("truc");
     }
-=======
-    }
-
->>>>>>> main
     @Override
     public void keyReleased() {
         keys.keysOut();
