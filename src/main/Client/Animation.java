@@ -1,3 +1,5 @@
+package main.Client;
+
 import processing.core.PImage;
 
 import java.util.ArrayList;

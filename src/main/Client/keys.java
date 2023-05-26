@@ -1,9 +1,12 @@
+package main.Client;
+
+import main.ScratchSmash;
 
 public class keys {
 
     public static boolean right, left;
 
-    static void keysIn() {
+    public static void keysIn() {
         if (ScratchSmash.instance.key == 'd') {
             right = true;
         }
@@ -12,7 +15,7 @@ public class keys {
         }
     }
 
-    static void keysOut() {
+    public static void keysOut() {
         if (ScratchSmash.instance.key == 'd') {
             right = false;
         }

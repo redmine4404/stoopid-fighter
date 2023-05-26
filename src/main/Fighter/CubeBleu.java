@@ -1,11 +1,16 @@
+package main.Fighter;
+
+import main.Client.keys;
+import main.ScratchSmash;
+
 public class CubeBleu {
   public static CubeBleu CB;
   int x, y;
   boolean toucheTerrain;
-  CubeBleu() {
+  public CubeBleu() {
     x = 600;
     y = 600;
-    ScratchSmash.CBleu = ScratchSmash.instance.loadImage("CubeBleu.png");
+    ScratchSmash.CBleu = ScratchSmash.instance.loadImage("src.Fighter.CubeBleu.png");
     ScratchSmash.CBleu.resize(128, 128);
   }
   void affiche() {
