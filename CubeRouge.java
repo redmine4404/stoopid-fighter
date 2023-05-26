@@ -1,19 +1,19 @@
-public class CubeRouge {
+public class CubeRouge extends FighterInstance{
     public static CubeRouge CR;
-    int x, y;
 
-    CubeRouge() {
-      ScratchSmash.CRouge = ScratchSmash.instance.loadImage("CubeRouge.png");
+
+    CubeRouge(Animation animationList) {
+        super(animationList);
+        CR = this;
       y = 200;
       x = 200;
-    ScratchSmash.CRouge.resize(128, 128);
     }
 
-    void affiche() {
-        ScratchSmash.instance.image(ScratchSmash.instance.CRouge, x, y);
+    public void affiche() {
+        ScratchSmash.instance.image(this.animationList.getAnimation("idle").get(0), x, y);
     }
 
-    void draw() {
+    public void draw() {
       affiche();
     }
   }

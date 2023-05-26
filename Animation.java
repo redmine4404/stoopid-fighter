@@ -2,15 +2,19 @@ import processing.core.PImage;
 
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
 
 public class Animation {
 
-    HashMap<String, PImage[]> animationlist = new HashMap<>();
+    HashMap<String,  ArrayList<PImage>> animationlist = new HashMap<String, ArrayList<PImage>>();
 
-    public void addAnimation(String name, PImage[] Animation) {
+    public Animation addAnimation(String name, ArrayList<PImage> Animation) {
   animationlist.put(name, Animation);
+  return this;
 }
+
+    public Animation(){
+
+    }
 
 //pour le chargement de toutes les images
 public PImage[] getAllImage() {
@@ -22,5 +26,8 @@ public PImage[] getAllImage() {
         }
     }
     return (PImage[]) image.toArray();
+}
+public ArrayList<PImage> getAnimation(String name){
+        return animationlist.get(name);
 }
 }
