@@ -13,4 +13,5 @@ void draw() {
   background(Terrain);
   CB.draw();
   CR.draw();
+  println(CB.toucheTerrainVertical, CB.toucheTerrainHorizontal);
 }
