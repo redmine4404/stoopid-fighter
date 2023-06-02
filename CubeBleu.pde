@@ -20,39 +20,38 @@ class CubeBleu {
   }
   boolean toucheTerrainVertical = false;
   boolean toucheTerrainHorizontal = false;
-  void verifierCollisionsVerticales() {
+  void colorTouch() {
     toucheTerrainVertical = false;
-    for (int l = 0; l < 128; l++) {
-      if (get(x + l, y) == -8026747) {
-        toucheTerrainVertical = true;
-        break;
+    toucheTerrainHorizontal = false;
+
+    // Vérification des collisions verticales
+    for (int h = 0; h < 128; h++) {
+      for (int l = 0; l < 128; l++) {
+        if (get(x + l, y + h) == -8026747) {
+          toucheTerrainVertical = true;
+        }
       }
     }
 
+    // Vérification des collisions horizontales
+    for (int l = 0; l < 128; l++) {
+      for (int h = 0; h < 128; h++) {
+        if (get(x + l, y + h) == -8026747) {
+          toucheTerrainHorizontal = true;
+        }
+      }
+    }
+
+    // Utilisation des résultats des collisions verticales et horizontales
     if (toucheTerrainVertical) {
       // Collision verticale détectée
       // Faites quelque chose ici, comme changer la couleur ou arrêter le mouvement vertical
-    }
-  }
-
-  void verifierCollisionsHorizontales() {
-    toucheTerrainHorizontal = false;
-    for (int h = 0; h < 128; h++) {
-      if (get(x, y + h) == -8026747) {
-        toucheTerrainHorizontal = true;
-        break;
-      }
     }
 
     if (toucheTerrainHorizontal) {
       // Collision horizontale détectée
       // Faites quelque chose ici, comme changer la couleur ou arrêter le mouvement horizontal
     }
-  }
-
-  void colorTouch() {
-    verifierCollisionsVerticales();
-    verifierCollisionsHorizontales();
   }
   void draw() {
     mooves();
