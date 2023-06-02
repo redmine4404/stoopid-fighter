@@ -1,3 +1,4 @@
+<<<<<<< HEAD:src/CubeBleu.java
 public class CubeBleu {
   public static CubeBleu CB;
   int x, y;
@@ -33,3 +34,26 @@ public class CubeBleu {
     affiche();
   }
 }
+=======
+CubeBleu CB;
+
+class CubeBleu {
+  int x, y;
+  CubeBleu() {
+    x = 600;
+    y = 600;
+    CBleu = loadImage("CubeBleu.png");
+  }
+  void affiche() {
+    image(CBleu, x, y);
+  }
+  void mooves() {
+    if (right == true) x += 5;
+    if (left == true) x-= 5;
+  }
+  void draw() {
+    mooves();
+    affiche();
+  }
+}
+>>>>>>> parent of 4dfbd79... Added colorDetections:CubeBleu.pde
