@@ -1,6 +1,6 @@
 CubeBleu CB;
 
-class CubeBleu {
+class CubeBleu extends Fighter{
   int x, y;
   CubeBleu() {
     x = 600;
