@@ -3,8 +3,8 @@ CubeBleu CB;
 class CubeBleu {
   int x, y;
   CubeBleu() {
-    x = 600;
-    y = 600;
+    x = 953;
+    y = 370;
     CBleu = loadImage("CubeBleu.png");
     CBleu.resize(128, 128);
   }
