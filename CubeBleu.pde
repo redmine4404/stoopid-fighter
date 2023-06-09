@@ -33,8 +33,7 @@ class CubeBleu {
               toucheTerrainHorizontal = true;
             }
           }
-          if (get(x + l, y + 128) == -8026747 || get(x + l, y + 0) == -8026747) {
-            //collision verticale
+          if (get(x + l, y + 128) == -8026747 || get(x + l, y + 0) == -8026747) { // collision verticale
             toucheTerrainVertical = true;
           }
         }
