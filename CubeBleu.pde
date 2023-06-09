@@ -1,6 +1,6 @@
 CubeBleu CB;
 
-class CubeBleu extends Fighter{
+class CubeBleu {
   int x, y;
   CubeBleu() {
     x = 600;
@@ -28,19 +28,19 @@ class CubeBleu extends Fighter{
     for (int h = 0; h < 128; h++) {
       for (int l = 0; l < 128; l++) {
         if (get(x + l, y + h) == -8026747) {
-          toucheTerrainVertical = true;
+          if (get(128 + x, y + h) == -8026747 || get(0 + x, y + h) == -8026747) {
+            if (h <= 120 && h >= 8) { //collision horizontale
+              toucheTerrainHorizontal = true;
+            }
+          }
+          if (get(x + l, y + 128) == -8026747 || get(x + l, y + 0) == -8026747) {
+            //collision verticale
+            toucheTerrainVertical = true;
+          }
         }
       }
     }
-
     // Vérification des collisions horizontales
-    for (int l = 0; l < 128; l++) {
-      for (int h = 0; h < 128; h++) {
-        if (get(x + l, y + h) == -8026747) {
-          toucheTerrainHorizontal = true;
-        }
-      }
-    }
 
     // Utilisation des résultats des collisions verticales et horizontales
     if (toucheTerrainVertical) {
