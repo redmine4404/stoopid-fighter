@@ -2,6 +2,11 @@ CubeBleu CB;
 
 class CubeBleu {
   int x, y;
+  int xSpeed, ySpeed = 0;
+  int xSpeedCooldown, ySpeedCooldown = 0;
+
+  Thread minusCooldown = new Thread("minusCooldown");
+
   CubeBleu() {
     x = 953;
     y = 370;
@@ -53,11 +58,27 @@ class CubeBleu {
     }
   }
   void draw() {
+    println(x);
     mooves();
     affiche();
     if (mousePressed) {
       x = mouseX;
       y = mouseY;
     }
+    x += xSpeed;
+    y += ySpeed;
+  }
+
+  void minusCooldown(){
+      if(xSpeedCooldown < 0) {
+        xSpeed -= 1 / (int) frameRate;
+      } else {
+        xSpeedCooldown -= 1 / (int) frameRate;
+      }   
+      if(ySpeedCooldown < 0) {
+        ySpeed -= 1 / (int) frameRate;
+      } else {
+        xSpeedCooldown -= 1 / (int) frameRate;
+      }
   }
 }
