@@ -44,8 +44,6 @@ class CubeBleu {
         }
       }
     }
-    }
-
   }
   void draw() {
     println(x);
@@ -59,26 +57,26 @@ class CubeBleu {
     y += ySpeed;
 
     if (!toucheTerrainVertical) {
-      if(ySpeed != 0){
-      ySpeed /= 1.1;
+      if (ySpeed != 0) {
+        ySpeed /= 1.1;
       } else {
-      ySpeed =- 1.0;
+        ySpeed =- 1.0;
       }
 
       ySpeed = utils.round(100, ySpeed);
-          println(ySpeed);
-
+      println(ySpeed);
+    }
   }
+  void minusCooldown() {
+    if (xSpeedCooldown < 0) {
+      xSpeed -= 1 / (int) frameRate;
+    } else {
+      xSpeedCooldown -= 1 / (int) frameRate;
+    }
+    if (ySpeedCooldown < 0) {
+      ySpeed -= 1 / (int) frameRate;
+    } else {
+      xSpeedCooldown -= 1 / (int) frameRate;
+    }
   }
-  void minusCooldown(){
-      if(xSpeedCooldown < 0) {
-        xSpeed -= 1 / (int) frameRate;
-      } else {
-        xSpeedCooldown -= 1 / (int) frameRate;
-      }   
-      if(ySpeedCooldown < 0) {
-        ySpeed -= 1 / (int) frameRate;
-      } else {
-        xSpeedCooldown -= 1 / (int) frameRate;
-      }
-  }
+}

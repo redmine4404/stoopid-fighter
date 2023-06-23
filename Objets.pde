@@ -13,7 +13,6 @@ class Armes {
       gunY = CB.y + 50.0;
       image(gunImage, gunX, gunY);
       if (mousePressed && frameCount%60 < 1) {
-      
       }
     }
   }
@@ -24,9 +23,19 @@ Tirs tir;
 class Tirs {
   float x, y;
   Tirs() {
-    
+    x = gunX;
+    y = gunY;
   }
-  
-  
-  
+  void draw() {
+    push();
+    fill(#F3F723);
+    stroke(#000000);
+    strokeWeight(2);
+    ellipse(x, y, 20, 20);
+    pop();
+    x -= 10;
+    if (dist(x, y, CR.x, CR.y) < 40) {
+      tirGun.remove(this);
+    }
+  }
 }
