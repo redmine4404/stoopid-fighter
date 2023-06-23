@@ -1,7 +1,7 @@
 CubeBleu CB;
 
 class CubeBleu {
-  int x, y;
+  public int x, y;
   int xSpeed, ySpeed = 0;
   int xSpeedCooldown, ySpeedCooldown = 0;
 
@@ -69,16 +69,16 @@ class CubeBleu {
     y += ySpeed;
   }
 
-  void minusCooldown(){
-      if(xSpeedCooldown < 0) {
-        xSpeed -= 1 / (int) frameRate;
-      } else {
-        xSpeedCooldown -= 1 / (int) frameRate;
-      }   
-      if(ySpeedCooldown < 0) {
-        ySpeed -= 1 / (int) frameRate;
-      } else {
-        xSpeedCooldown -= 1 / (int) frameRate;
-      }
+  void minusCooldown() {
+    if (xSpeedCooldown < 0) {
+      xSpeed -= 1 / (int) frameRate;
+    } else {
+      xSpeedCooldown -= 1 / (int) frameRate;
+    }
+    if (ySpeedCooldown < 0) {
+      ySpeed -= 1 / (int) frameRate;
+    } else {
+      xSpeedCooldown -= 1 / (int) frameRate;
+    }
   }
 }

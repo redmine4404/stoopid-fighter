@@ -1,12 +1,12 @@
 boolean right, left;
 
 void keyPressed() {
-    keysIn();
+  keysIn();
 }
 
 
 void keyReleased() {
-    keysOut();
+  keysOut();
 }
 
 
@@ -14,9 +14,9 @@ void keysIn() {
   if (key == 'd' || key == 'D') {
     right = true;
   }
-    if (key == 'q' || key == 'Q' || key == 'a' || key == 'A') {
+  if (key == 'q' || key == 'Q' || key == 'a' || key == 'A') {
     left = true;
-}
+  }
 }
 
 void keysOut() {
