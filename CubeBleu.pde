@@ -44,18 +44,8 @@ class CubeBleu {
         }
       }
     }
-    // Vérification des collisions horizontales
-
-    // Utilisation des résultats des collisions verticales et horizontales
-    
     }
 
-    println(ySpeed);
-
-    if (toucheTerrainHorizontal) {
-      // Collision horizontale détectée
-      // Faites quelque chose ici, comme changer la couleur ou arrêter le mouvement horizontal
-    }
   }
   void draw() {
     println(x);
@@ -75,19 +65,20 @@ class CubeBleu {
       ySpeed =- 1.0;
       }
 
-      utils.round(100, ySpeed);
-  }
+      ySpeed = utils.round(100, ySpeed);
+          println(ySpeed);
 
-  void minusCooldown() {
-    if (xSpeedCooldown < 0) {
-      xSpeed -= 1 / (int) frameRate;
-    } else {
-      xSpeedCooldown -= 1 / (int) frameRate;
-    }
-    if (ySpeedCooldown < 0) {
-      ySpeed -= 1 / (int) frameRate;
-    } else {
-      xSpeedCooldown -= 1 / (int) frameRate;
-    }
   }
-}
+  }
+  void minusCooldown(){
+      if(xSpeedCooldown < 0) {
+        xSpeed -= 1 / (int) frameRate;
+      } else {
+        xSpeedCooldown -= 1 / (int) frameRate;
+      }   
+      if(ySpeedCooldown < 0) {
+        ySpeed -= 1 / (int) frameRate;
+      } else {
+        xSpeedCooldown -= 1 / (int) frameRate;
+      }
+  }
