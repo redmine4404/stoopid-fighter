@@ -1,8 +1,8 @@
 CubeBleu CB;
 
 class CubeBleu {
-  public int x, y;
-  int xSpeed, ySpeed = 0;
+  int x, y;
+  float xSpeed, ySpeed = 0;
   int xSpeedCooldown, ySpeedCooldown = 0;
 
   Thread minusCooldown = new Thread("minusCooldown");
@@ -47,10 +47,10 @@ class CubeBleu {
     // Vérification des collisions horizontales
 
     // Utilisation des résultats des collisions verticales et horizontales
-    if (toucheTerrainVertical) {
-      // Collision verticale détectée
-      // Faites quelque chose ici, comme changer la couleur ou arrêter le mouvement vertical
+    
     }
+
+    println(ySpeed);
 
     if (toucheTerrainHorizontal) {
       // Collision horizontale détectée
@@ -67,6 +67,15 @@ class CubeBleu {
     }
     x += xSpeed;
     y += ySpeed;
+
+    if (!toucheTerrainVertical) {
+      if(ySpeed != 0){
+      ySpeed /= 1.1;
+      } else {
+      ySpeed =- 1.0;
+      }
+
+      utils.round(100, ySpeed);
   }
 
   void minusCooldown() {
