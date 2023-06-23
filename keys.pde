@@ -17,6 +17,10 @@ void keysIn() {
   if (key == 'q' || key == 'Q' || key == 'a' || key == 'A') {
     left = true;
   }
+  if (key == 't') {
+    CB.x = mouseX
+    CB.y = mouseY
+  }
 }
 
 void keysOut() {

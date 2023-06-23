@@ -23,8 +23,8 @@ Tirs tir;
 class Tirs {
   float x, y;
   Tirs() {
-    x = gunX;
-    y = gunY;
+    x = gun.gunX;
+    y = gun.gunY;
   }
   void draw() {
     push();

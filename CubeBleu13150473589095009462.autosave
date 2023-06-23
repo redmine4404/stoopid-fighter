@@ -44,26 +44,39 @@ class CubeBleu {
         }
       }
     }
+    // Vérification des collisions horizontales
+
+    // Utilisation des résultats des collisions verticales et horizontales
   }
-  void draw() {
-    println(x);
-    mooves();
-    affiche();
-    
-    x += xSpeed;
-    y += ySpeed;
 
-    if (!toucheTerrainVertical) {
-      if (ySpeed != 0) {
-        ySpeed /= 1.1;
-      } else {
-        ySpeed =- 1.0;
-      }
+  println(ySpeed);
 
-      //ySpeed = utils.round(100, ySpeed);
-      println(ySpeed);
+  if (toucheTerrainHorizontal) {
+    // Collision horizontale détectée
+    // Faites quelque chose ici, comme changer la couleur ou arrêter le mouvement horizontal
+  }
+}
+void draw() {
+  println(x);
+  mooves();
+  affiche();
+  if (mousePressed) {
+    x = mouseX;
+    y = mouseY;
+  }
+  x += xSpeed;
+  y += ySpeed;
+
+  if (!toucheTerrainVertical) {
+    if (ySpeed != 0) {
+      ySpeed /= 1.1;
+    } else {
+      ySpeed =- 1.0;
     }
+
+    utils.round(100, ySpeed);
   }
+
   void minusCooldown() {
     if (xSpeedCooldown < 0) {
       xSpeed -= 1 / (int) frameRate;
