@@ -17,6 +17,10 @@ class CubeBleu {
     //coords();
     colorTouch();
     image(CBleu, x, y);
+    if (tp == true) {
+      CB.x = mouseX;
+      CB.y = mouseY;
+    }
     //if (colorTouch() == true) //nshgsi;
   }
   void mooves() {
@@ -49,7 +53,7 @@ class CubeBleu {
     println(x);
     mooves();
     affiche();
-    
+
     x += xSpeed;
     y += ySpeed;
 

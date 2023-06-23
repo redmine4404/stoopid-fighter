@@ -1,4 +1,4 @@
-boolean right, left;
+boolean right, left, tp;
 
 void keyPressed() {
   keysIn();
@@ -18,8 +18,7 @@ void keysIn() {
     left = true;
   }
   if (key == 't') {
-    CB.x = mouseX
-    CB.y = mouseY
+    tp = true;
   }
 }
 
@@ -29,5 +28,8 @@ void keysOut() {
   }
   if (key == 'q' || key == 'Q' || key == 'a' || key == 'A') {
     left = false;
+  }
+  if (key == 't') {
+    tp = true;
   }
 }
