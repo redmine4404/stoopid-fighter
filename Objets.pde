@@ -10,12 +10,12 @@ class Armes {
   void draw() {
     if (type == "Gun") {
       if (gunCadence != 1) gunCadence -= 1;
-      if (right == true && left == false) {
+      if (right == false && left == true) {
         gunX = CB.x - 50.0;
         gunY = CB.y + 50.0;
         image(gunImage, gunX, gunY);
       }
-      if (right == false && left == true) {
+      if (right == true && left == false) {
         gunX = CB.x + 128.0;
         gunY = CB.y + 50;
         if (gunImage.width > 0) { // Vérifie si l'image est chargée
@@ -26,11 +26,11 @@ class Armes {
         }
       }
       if (mousePressed && gunCadence == 1) {
-        if (right == true && left == false) {
+        if (right == false && left == true) {
           tirGun.add(new Tirs("Right"));
           gunCadence = 20;
         }
-        if (right == false && left == true) {
+        if (right == true && left == false) {
           tirGun.add(new Tirs("Left"));
           gunCadence = 20;
         }
@@ -45,8 +45,14 @@ class Tirs {
   String type = "";
   float x, y;
   Tirs(String t) {
-    x = gun.gunX;
-    y = gun.gunY;
+    if (t == "Right") {
+      x = gun.gunX;
+      y = gun.gunY;
+    }
+    if (t == "Left") {
+      x = gun.gunX + 50;
+      y = gun.gunY;
+    }
     type = t;
   }
   void draw() {
