@@ -18,12 +18,6 @@ class Armes {
       if (right == false && left == true) {
         gunX = CB.x + 128.0;
         gunY = CB.y + 50;
-        //gunX = CB.x - 50.0;
-        //gunY = CB.y + 50.0;
-        //push();
-        //scale(-1, 1);
-        //image(gunImage, gunX, gunY);
-        //pop();
         if (gunImage.width > 0) { // Vérifie si l'image est chargée
           push();
           scale(-1, 1);
@@ -32,7 +26,7 @@ class Armes {
         }
       }
       if (mousePressed && gunCadence == 1) {
-        tirGun.add(new Tirs());
+        tirGun.add(new Tirs("Right"));
         gunCadence = 20;
       }
     }
@@ -40,12 +34,14 @@ class Armes {
 }
 
 ArrayList <Tirs> tirGun;
-Tirs tir;
+Tirs tirRight, tirLeft;
 class Tirs {
+  String type = "";
   float x, y;
-  Tirs() {
+  Tirs(String t) {
     x = gun.gunX;
     y = gun.gunY;
+    type = t;
   }
   void draw() {
     push();
@@ -54,7 +50,8 @@ class Tirs {
     strokeWeight(2);
     ellipse(x, y, 20, 20);
     pop();
-    x -= 10;
+    if (type == "Right") x -= 10;
+    if (type == "Left") x += 10;
     if (dist(x, y, CR.x + 64, CR.y + 59) < 70) {
       tirGun.remove(this);
     }

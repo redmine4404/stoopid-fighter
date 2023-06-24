@@ -6,7 +6,8 @@ void setup() {
   CB = new CubeBleu();
   CR = new CubeRouge();
   gun = new Armes("Gun");
-  tir = new Tirs();
+  tirRight = new Tirs("Right");
+  tirLeft = new Tirs("Left");
   tirGun = new ArrayList<Tirs>();
   Terrain = loadImage("Terrain.png");
   Terrain.resize(width, height);
