@@ -26,8 +26,14 @@ class Armes {
         }
       }
       if (mousePressed && gunCadence == 1) {
-        tirGun.add(new Tirs("Right"));
-        gunCadence = 20;
+        if (right == true && left == false) {
+          tirGun.add(new Tirs("Right"));
+          gunCadence = 20;
+        }
+        if (right == false && left == true) {
+          tirGun.add(new Tirs("Left"));
+          gunCadence = 20;
+        }
       }
     }
   }
@@ -57,7 +63,7 @@ class Tirs {
     }
   }
   boolean supr() {
-    if (x < 0 || x > height) {
+    if (x < 0 || x > width) {
       return true;
     } else {
       return false;
@@ -65,10 +71,18 @@ class Tirs {
   }
 }
 
-void tirOpti() {
+void tirRightOpti() {
   for (int i =tirGun.size() -1; i >= 0; i--) {
-    tir = tirGun.get(i);
-    tir.draw();
-    if (tir.supr()) tirGun.remove(i);
+    tirRight = tirGun.get(i);
+    tirRight.draw();
+    if (tirRight.supr()) tirGun.remove(i);
+  }
+}
+
+void tirLeftOpti() {
+  for (int i =tirGun.size() -1; i >= 0; i--) {
+    tirLeft = tirGun.get(i);
+    tirLeft.draw();
+    if (tirLeft.supr()) tirGun.remove(i);
   }
 }

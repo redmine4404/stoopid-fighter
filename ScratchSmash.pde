@@ -19,5 +19,6 @@ void draw() {
   CB.draw();
   CR.draw();
   gun.draw();
-  tirOpti();
+  tirRightOpti();
+  tirLeftOpti();
 }
