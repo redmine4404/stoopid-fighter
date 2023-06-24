@@ -37,12 +37,12 @@ class Tirs {
     ellipse(x, y, 20, 20);
     pop();
     x -= 10;
-    if (dist(x, y, CR.x, CR.y) < 40) {
+    if (dist(x, y, CR.x + 64, CR.y + 59) < 70) {
       tirGun.remove(this);
     }
   }
   boolean supr() {
-    if (x < 0) {
+    if (x < 0 || x > height) {
       return true;
     } else {
       return false;

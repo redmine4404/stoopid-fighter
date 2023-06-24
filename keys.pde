@@ -30,6 +30,6 @@ void keysOut() {
     left = false;
   }
   if (key == 't') {
-    tp = true;
+    tp = false;
   }
 }
