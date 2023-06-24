@@ -10,12 +10,14 @@ class Armes {
   void draw() {
     if (type == "Gun") {
       if (gunCadence != 1) gunCadence -= 1;
-      gunX = CB.x - 50.0;
-      gunY = CB.y + 50.0;
+      //if (right == true && left == false) {
+        gunX = CB.x - 50.0;
+        gunY = CB.y + 50.0;
+      //}
       image(gunImage, gunX, gunY);
-      if (mousePressed && frameCount%gunCadence < 1) {
-      tirGun.add(new Tirs());
-      gunCadence = 20;
+      if (mousePressed && gunCadence == 1) {
+        tirGun.add(new Tirs());
+        gunCadence = 20;
       }
     }
   }
