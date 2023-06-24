@@ -17,7 +17,6 @@ void draw() {
   background(Terrain);
   CB.draw();
   CR.draw();
-  println(mouseX, mouseY);
   gun.draw();
   tirOpti();
 }
