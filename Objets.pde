@@ -10,11 +10,27 @@ class Armes {
   void draw() {
     if (type == "Gun") {
       if (gunCadence != 1) gunCadence -= 1;
-      //if (right == true && left == false) {
+      if (right == true && left == false) {
         gunX = CB.x - 50.0;
         gunY = CB.y + 50.0;
-      //}
-      image(gunImage, gunX, gunY);
+        image(gunImage, gunX, gunY);
+      }
+      if (right == false && left == true) {
+        gunX = CB.x + 128.0;
+        gunY = CB.y + 50;
+        //gunX = CB.x - 50.0;
+        //gunY = CB.y + 50.0;
+        //push();
+        //scale(-1, 1);
+        //image(gunImage, gunX, gunY);
+        //pop();
+        if (gunImage.width > 0) { // Vérifie si l'image est chargée
+          push();
+          scale(-1, 1);
+          image(gunImage, -gunX - gunImage.width, gunY); // Affiche l'image inversée
+          pop();
+        }
+      }
       if (mousePressed && gunCadence == 1) {
         tirGun.add(new Tirs());
         gunCadence = 20;
