@@ -22,32 +22,7 @@ class Armes {
     pop();
     if (type == "Gun" && weaponType == "Gun") {
       if (gunCadence != 1) gunCadence -= 1;
-      if (right == false && left == true) {
-        gunX = CB.x - 50.0;
-        gunY = CB.y + 50.0;
-        image(gunImage, gunX, gunY);
-        gunLeft = true;
-        gunRight = false;
-      }
-      if (right == true && left == false) {
-        gunX = CB.x + 128.0;
-        gunY = CB.y + 50;
-        imageGunInversew();
-        gunLeft = false;
-        gunRight = true;
-      }
-      if (right == false && left == false) {
-        if (gunLeft == true) {
-          gunX = CB.x - 50.0;
-          gunY = CB.y + 50.0;
-          image(gunImage, gunX, gunY);
-        }
-        if (gunRight == true) {
-          gunX = CB.x + 128.0;
-          gunY = CB.y + 50;
-          imageGunInversew();
-        }
-      }
+      gunAffiche();
       tirer();
     }
     if (mouseButton == CENTER && mousePressed) {
@@ -83,6 +58,34 @@ class Armes {
       if (gunLeft == true) {
         tirGun.add(new Tirs("Right"));
         gunCadence = 20;
+      }
+    }
+  }
+  void gunAffiche() {
+    if (right == false && left == true) {
+      gunX = CB.x - 50.0;
+      gunY = CB.y + 50.0;
+      image(gunImage, gunX, gunY);
+      gunLeft = true;
+      gunRight = false;
+    }
+    if (right == true && left == false) {
+      gunX = CB.x + 128.0;
+      gunY = CB.y + 50;
+      imageGunInversew();
+      gunLeft = false;
+      gunRight = true;
+    }
+    if (right == false && left == false) {
+      if (gunLeft == true) {
+        gunX = CB.x - 50.0;
+        gunY = CB.y + 50.0;
+        image(gunImage, gunX, gunY);
+      }
+      if (gunRight == true) {
+        gunX = CB.x + 128.0;
+        gunY = CB.y + 50;
+        imageGunInversew();
       }
     }
   }
