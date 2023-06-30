@@ -18,12 +18,7 @@ class Armes {
       if (right == true && left == false) {
         gunX = CB.x + 128.0;
         gunY = CB.y + 50;
-        if (gunImage.width > 0) { // Vérifie si l'image est chargée
-          push();
-          scale(-1, 1);
-          image(gunImage, -gunX - gunImage.width, gunY); // Affiche l'image inversée
-          pop();
-        }
+        imageGunInversé();
       }
       if (mousePressed && gunCadence == 1) {
         if (right == false && left == true) {
@@ -37,7 +32,16 @@ class Armes {
       }
     }
   }
+  void imageGunInversé() {
+    if (gunImage.width > 0) { // Vérifie si l'image est chargée
+      push();
+      scale(-1, 1);
+      image(gunImage, -gunX - gunImage.width, gunY); // Affiche l'image inversée
+      pop();
+    }
+  }
 }
+
 
 ArrayList <Tirs> tirGun;
 class Tirs {
@@ -65,6 +69,7 @@ class Tirs {
     if (type == "Left") x += 20;
     if (dist(x, y, CR.x + 64, CR.y + 59) < 70) {
       tirGun.remove(this);
+      pvCubeRouge -= 5;
     }
   }
   boolean supr() {
