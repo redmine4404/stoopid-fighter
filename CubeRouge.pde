@@ -9,6 +9,7 @@ class CubeRouge {
   }
   void affiche() {
     image(CRouge, x, y);
+    text(pvCubeRouge, x, y - 50);
   }
 
   void draw() {

@@ -40,7 +40,6 @@ class Armes {
 }
 
 ArrayList <Tirs> tirGun;
-Tirs tirRight, tirLeft;
 class Tirs {
   String type = "";
   float x, y;
@@ -62,8 +61,8 @@ class Tirs {
     strokeWeight(2);
     ellipse(x, y, 20, 20);
     pop();
-    if (type == "Right") x -= 10;
-    if (type == "Left") x += 10;
+    if (type == "Right") x -= 20;
+    if (type == "Left") x += 20;
     if (dist(x, y, CR.x + 64, CR.y + 59) < 70) {
       tirGun.remove(this);
     }
@@ -77,18 +76,10 @@ class Tirs {
   }
 }
 
-void tirRightOpti() {
+void tirOpti() {
   for (int i =tirGun.size() -1; i >= 0; i--) {
-    tirRight = tirGun.get(i);
-    tirRight.draw();
-    if (tirRight.supr()) tirGun.remove(i);
-  }
-}
-
-void tirLeftOpti() {
-  for (int i =tirGun.size() -1; i >= 0; i--) {
-    tirLeft = tirGun.get(i);
-    tirLeft.draw();
-    if (tirLeft.supr()) tirGun.remove(i);
+    Tirs t = tirGun.get(i);
+    t.draw();
+    if (t.supr()) tirGun.remove(i);
   }
 }
