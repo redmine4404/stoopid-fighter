@@ -3,6 +3,7 @@ Armes gun;
 class Armes {
   String type = "";
   float gunX, gunY;
+  boolean gunRight, gunLeft;
   Armes(String t) {
     gunImage = loadImage("Gun.png");
     type = t;
@@ -14,13 +15,29 @@ class Armes {
         gunX = CB.x - 50.0;
         gunY = CB.y + 50.0;
         image(gunImage, gunX, gunY);
+        gunLeft = true;
+        gunRight = false;
       }
       if (right == true && left == false) {
         gunX = CB.x + 128.0;
         gunY = CB.y + 50;
-        imageGunInversé();
+        imageGunInversew();
+        gunLeft = false;
+        gunRight = true;
       }
-      if (mousePressed && gunCadence == 1) {
+      if (right == false && left == false) {
+        if (gunLeft == true) {
+          gunX = CB.x - 50.0;
+          gunY = CB.y + 50.0;
+          image(gunImage, gunX, gunY);
+        }
+        if (gunRight == true) {
+          gunX = CB.x + 128.0;
+          gunY = CB.y + 50;
+          imageGunInversew();
+        }
+      }
+      if (mouseButton == LEFT && gunCadence == 1) {
         if (right == false && left == true) {
           tirGun.add(new Tirs("Right"));
           gunCadence = 20;
@@ -32,7 +49,7 @@ class Armes {
       }
     }
   }
-  void imageGunInversé() {
+  void imageGunInversew() {
     if (gunImage.width > 0) { // Vérifie si l'image est chargée
       push();
       scale(-1, 1);
