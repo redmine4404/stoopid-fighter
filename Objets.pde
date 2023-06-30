@@ -1,4 +1,4 @@
-
+String weaponType = "null";
 Armes gun;
 class Armes {
   String type = "";
@@ -9,7 +9,18 @@ class Armes {
     type = t;
   }
   void draw() {
-    if (type == "Gun") {
+    if (key == '&' && keyPressed) {
+      weaponType = "Gun";
+    }
+    if (key == 'é' && keyPressed) {
+      weaponType = "Knife";
+    }
+    push();
+    fill(#000000);
+    textSize(100);
+    text(weaponType + "mode", CB.x, CB.y - 50);
+    pop();
+    if (type == "Gun" && weaponType == "Gun") {
       if (gunCadence != 1) gunCadence -= 1;
       if (right == false && left == true) {
         gunX = CB.x - 50.0;
@@ -37,16 +48,12 @@ class Armes {
           imageGunInversew();
         }
       }
-      if (mouseButton == LEFT && gunCadence == 1) {
-        if (right == false && left == true) {
-          tirGun.add(new Tirs("Right"));
-          gunCadence = 20;
-        }
-        if (right == true && left == false) {
-          tirGun.add(new Tirs("Left"));
-          gunCadence = 20;
-        }
-      }
+      tirer();
+    }
+    if (mouseButton == CENTER && mousePressed) {
+      gunLeft = false;
+      gunRight = false;
+      weaponType = "null";
     }
   }
   void imageGunInversew() {
@@ -55,6 +62,28 @@ class Armes {
       scale(-1, 1);
       image(gunImage, -gunX - gunImage.width, gunY); // Affiche l'image inversée
       pop();
+    }
+  }
+  void tirer() {
+    if (mouseButton == LEFT && mousePressed && gunCadence == 1) {
+      if (right == false && left == true) {
+        tirGun.add(new Tirs("Right"));
+        gunCadence = 20;
+      }
+      if (right == true && left == false) {
+        tirGun.add(new Tirs("Left"));
+        gunCadence = 20;
+      }
+    }
+    if (mouseButton == LEFT && mousePressed && gunCadence == 1) {
+      if (gunRight == true) {
+        tirGun.add(new Tirs("Left"));
+        gunCadence = 20;
+      }
+      if (gunLeft == true) {
+        tirGun.add(new Tirs("Right"));
+        gunCadence = 20;
+      }
     }
   }
 }
